@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Escape Room: Η Φόρμα του Χάους</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- Πρώτη Σελίδα -->
+    <div class="container" id="initialContent">
+      <div class="initial-content">
+        <h1>Escape Room: Η Φόρμα του Χάους</h1>
+        <p>
+          Μια σημαντική κρατική ηλεκτρονική φόρμα αποτέλεσε στόχο κυβερνοεπίθεσης, με αποτέλεσμα ένας χάκερ να αφαιρέσει όλους τους ελέγχους εγκυρότητας!<br>
+          Καλείστε να εντοπίσετε τους ελέγχους εγκυρότητας που λείπουν και να τους επαναφέρετε.<br>
+          Καλή επιτυχία!
+        </p>
+        <img src="image1.png" alt="Εικόνα Άσκησης" style="width: 50%; height: auto;">
+        <br><br>
+        <button id="startButton">Ξεκινήστε</button>
+      </div>
+    </div>
+
+    <!-- Ασκήσεις -->
+<div class="container" id="exerciseContainer" style="display: none;">
+  <div class="button-container">
+    <span class="arrow disabled" id="leftArrow">&#8592;</span>
+    <span class="exercise" id="exerciseText">Άσκηση 1: Έλεγχος ονόματος</span>
+    <span class="arrow disabled" id="rightArrow">&#8594;</span>
+  </div>
+
+  <div id="inputSection" style="display: none; margin-top: 10px;">
+
+    <!-- Άσκηση 1 -->
+    <div id="exercise1Inputs" style="display: none;">
+      <div class="code-box">
+        ΑΡΧΗ_ΕΠΑΝΑΛΗΨΗΣ<br>
+        &nbsp;&nbsp;ΓΡΑΨΕ "Δώσε όνομα:"<br>
+        &nbsp;&nbsp;ΔΙΑΒΑΣΕ όνομα<br>
+        <div class="input-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; line-height: 2;">
+          <span>ΜΕΧΡΙΣ_ΟΤΟΥ</span>
+          <span>ΜΗΚΟΣ(όνομα) >=</span>
+          <input type="text" id="nameLengthInput" size="2" class="nice-input" />
+          <span>ΚΑΙ ΕΙΝΑΙ_ΕΛΛΗΝΙΚΟΙ_ΧΑΡΑΚΤΗΡΕΣ(</span>
+          <input type="text" id="greekCheckInput" size="6" class="nice-input" />
+          <span>) = ΑΛΗΘΗΣ ΚΑΙ ΕΙΝΑΙ_ΚΕΦΑΛΑΙΟ(</span>
+          <input type="text" id="capitalCheckInput" size="18" class="nice-input" />
+          <span>) = ΑΛΗΘΗΣ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Άσκηση 2 -->
+    <div id="exercise2Inputs" style="display: none;">
+      <div class="code-box">
+        ΑΡΧΗ_ΕΠΑΝΑΛΗΨΗΣ<br>
+        &nbsp;&nbsp;ΓΡΑΨΕ "Δώσε email:"<br>
+        &nbsp;&nbsp;ΔΙΑΒΑΣΕ email<br>
+        <div class="input-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; line-height: 2;">
+          <span>ΜΕΧΡΙΣ_ΟΤΟΥ</span>
+          <span>ΕΙΝΑΙ_ΔΙΕΥΘΥΝΣΗ_EMAIL(</span>
+          <input type="text" id="mailInput" size="6" class="nice-input" />
+          <span>) = </span>
+          <input type="text" id="trueInput" size="18" class="nice-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Άσκηση 3 -->
+    <div id="exercise3Inputs" style="display: none;">
+      <div class="code-box">
+        ΑΡΧΗ_ΕΠΑΝΑΛΗΨΗΣ<br>
+        &nbsp;&nbsp;ΓΡΑΨΕ "Δώσε ηλικία:"<br>
+        &nbsp;&nbsp;ΔΙΑΒΑΣΕ ηλικία<br>
+        <div class="input-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; line-height: 2;">
+          <span>ΜΕΧΡΙΣ_ΟΤΟΥ ηλικία >=</span>
+          <input type="text" id="userInput" class="nice-input" />
+          <span>ΚΑΙ ηλικία <=</span>
+          <input type="text" id="userInputMax" class="nice-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Άσκηση 4 -->
+    <div id="exercise4Inputs" style="display: none;">
+      <div class="code-box">
+        ΑΡΧΗ_ΕΠΑΝΑΛΗΨΗΣ<br>
+        &nbsp;&nbsp;ΓΡΑΨΕ "Δώσε κινητό:"<br>
+        &nbsp;&nbsp;ΔΙΑΒΑΣΕ κινητό<br>
+        <div class="input-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; line-height: 2;">
+          <span>ΜΕΧΡΙΣ_ΟΤΟΥ ΑΡΙΘΜΟΣ_ΨΗΦΙΩΝ(κινητό) =</span>
+          <input type="text" id="digitCountInput" class="nice-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Άσκηση 5 -->
+    <div id="exercise5Inputs" style="display: none;">
+      <div class="code-box">
+        ΑΡΧΗ_ΕΠΑΝΑΛΗΨΗΣ<br>
+        &nbsp;&nbsp;ΓΡΑΨΕ "Δώσε ΑΦΜ:"<br>
+        &nbsp;&nbsp;ΔΙΑΒΑΣΕ ΑΦΜ<br>
+        <div class="input-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; line-height: 2;">
+          <span>ΜΕΧΡΙΣ_ΟΤΟΥ ΜΗΚΟΣ(</span>
+          <input type="text" id="afmInput" size="6" class="nice-input" />
+          <span>) = </span>
+          <input type="text" id="afmLength" size="18" class="nice-input" />
+        </div>
+      </div>
+    </div>
+
+  </div> 
+  <!-- Τέλος inputSection -->
+
+
+          <!-- Drag and Drop -->
+      <div id="exerciseContent">
+        <div id="dropZone" style="margin: 10px 0; padding: 20px; border: 2px dashed #007BFF; border-radius: 5px;">
+          Σύρε εδώ τον σωστό έλεγχο εγκυρότητας
+        </div>
+
+        <div id="dragOptions" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <div class="draggable" draggable="true" data-rule="greek-capital">Πρώτο γράμμα κεφαλαίο, τουλάχιστον 2 ελληνικά γράμματα</div>
+          <div class="draggable" draggable="true" data-rule="only-numbers">Μόνο αριθμοί</div>
+          <div class="draggable" draggable="true" data-rule="valid-email">Έγκυρη διεύθυνση email (xx@xx.xx)</div>
+          <div class="draggable" draggable="true" data-rule="any-characters">Οποιοιδήποτε χαρακτήρες</div>
+          <div class="draggable" draggable="true" data-rule="afm">9 αριθητικοί χαρακτήρες</div>
+        </div>
+
+        <p id="resultMsg"></p>
+        <button onclick="checkAnswer()">Έλεγχος</button>
+        <button onclick="showSolution()">Λύση</button>
+        <button onclick="returnToStart()">Επιστροφή στην αρχική</button>
+        
+      </div>
+    </div>
+      
+    <!-- Τελική Σελίδα -->
+    <div class="container hidden" id="finalPage">
+      <h2>Συγχαρητήρια!</h2>
+      <p>Η δραστηριότητα ολοκληρώθηκε.</p>
+      <img src="congrats.png" alt="Activity Complete" class="final-image">
+      <button onclick="returnToStart()">Επιστροφή στην αρχική</button>
+    </div>
+
+
+  <script src="script.js"></script>
+
+  </body>
+</html>

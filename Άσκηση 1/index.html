@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Έλεγχος Εγκυρότητας</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Δημόσια Υπηρεσία Καταχώρησης Δεδομένων</h1>
+
+  <div class="container">
+    <div class="instructions">
+      <p>
+        Συμπληρώστε τα πεδία της φόρμας με τέτοιον τρόπο ώστε να δοκιμάσετε διάφορες περιπτώσεις ελέγχου εγκυρότητας.
+        <br>
+        Για παράδειγμα: αρνητική ή μη αποδεκτή ηλικία, κενό πεδίο, μη έγκυρο email, λάθος αριθμός ψηφίων, κ.λπ.
+        <br>
+        Με την εισαγωγή σωστών τιμών και τη χρήση του κουμπιού "Υποβολή" ή με το πάτημα του κουμπιού "Γέμισμα Φόρμας" και στη συνέχεια του κουμπιού "Υποβολή", θα εμφανιστούν οι έλεγχοι εγκυρότητας που εφαρμόζονται στα πεδία της φόρμας. Πατώντας το "Εμφάνιση Ψευδογλώσσας" θα δείτε ενδεικτικό κώδικα που χρησιμοποιείται για την επικύρωση των δεδομένων.
+      </p>
+
+      <button type="button" onclick="clearForm()">Καθαρισμός Φόρμας</button>
+
+      <button type="button" onclick="fillForm()">Γέμισμα Φόρμας</button>
+
+      <a href="solutions.txt" target="_blank">
+        <button type="button">Εμφάνιση Ψευδογλώσσας</button>
+      </a>
+    </div>
+
+    <form id="validationForm" novalidate>
+      <label for="name">Όνομα:</label>
+      <input type="text" id="name" required>
+      <small></small>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <small></small>
+
+      <label for="age">Ηλικία (18-99):</label>
+      <input type="text" id="age" min="18" max="99" required>
+      <small></small>
+
+      <label for="phone">Κινητό:</label>
+      <input type="tel" id="phone" pattern="^\\d{10}$" required>
+      <small></small>
+
+      <label for="afm">ΑΦΜ (πρέπει να περιέχει 9 ψηφία):</label>
+      <input type="text" id="afm" pattern="^\d{9}$" required>
+      <small></small>
+
+      <button type="submit">Υποβολή</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
