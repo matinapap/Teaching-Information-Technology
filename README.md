@@ -35,6 +35,8 @@ A hacker has stripped every validation check from a government form. Students wo
 
 Each wrong answer gets a targeted hint, a *Solution* button reveals the answer after a confirmation prompt, and arrow navigation leads to a final "Congratulations" screen.
 
+> 💻 **Best on desktop.** This activity uses the HTML5 Drag and Drop API, which doesn't work reliably on touchscreens.
+
 ![Escape room activity](docs/screenshots/escape-room.png)
 
 ## Learning Objectives
